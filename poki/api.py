@@ -57,7 +57,7 @@ async def read_root(request: Request) -> Response:
             <h1>Hello, welcome to Poki.</h1>
 
             <p>Poki is a simple, extremely minimal pastebin-like service.
-            You can make an upload to this page using <code><raw>echo "example" | curl --data-binary @- {get_base_url(request)}lipu</raw> -H "Authorization: Bearer <your token here>"</code>.</p>
+            You can make an upload to this page using <code><raw>echo "example" | curl --data-binary @- {get_base_url(request)}lipu</raw> -H "Authorization: Bearer &lt;your token here&gt;"</code>.</p>
         </main>
     </body>
 </html>""",
