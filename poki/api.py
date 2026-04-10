@@ -71,7 +71,7 @@ async def upload_content(
     content: Annotated[bytes, Body()],
     request: Request,
     authorization: Annotated[str, Header()] = "",
-) -> Response:
+):
     if not authorization or not len(authorization.split()) == 2:
         raise HTTPException(
             401, "You do not have authorization to upload files to this server."
@@ -85,7 +85,7 @@ async def upload_content(
     hash = store.add(content)
     uri = f"{get_base_url(request)}lipu/{hash}"
 
-    return Response(uri)
+    return {"uri": uri}
 
 
 @app.get("/lipu/{hash}")
